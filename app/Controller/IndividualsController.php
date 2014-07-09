@@ -19,5 +19,13 @@ class IndividualsController extends AppController {
         $datos=$this->Individual->find("all", null);
         debug($datos);
     }
+    
+    public function add(){
+        
+        if($this->request->is("POST"))
+        {
+            $this->Individual->save($this->request->data);
+        }
+    }
 
 }
