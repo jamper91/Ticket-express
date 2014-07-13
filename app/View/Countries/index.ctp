@@ -14,9 +14,10 @@
 		<td><?php echo h($country['Country']['id']); ?>&nbsp;</td>
 		<td><?php echo h($country['Country']['nombre']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $country['Country']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $country['Country']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $country['Country']['id']), array(), __('Are you sure you want to delete # %s?', $country['Country']['id'])); ?>
+			
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $country['Country']['id'])); ?>
+			<?php // echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $country['Country']['id']), array(), __('Are you sure you want to delete # %s?', $country['Country']['id'])); ?>
+                    <a href="<?php echo $this->Html->url(array("controller" => "countries", "action" => "delete", $country['Country']['id'] )); ?>" tipo="borrar" redi="<?php echo $this->Html->url(array("controller" => "countries", "action" => "index")); ?>">Eliminar</a>
 		</td>
 	</tr>
 <?php endforeach; ?>

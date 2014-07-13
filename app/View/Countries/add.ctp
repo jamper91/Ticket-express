@@ -17,3 +17,14 @@
 		<li><?php echo $this->Html->link(__('New Department'), array('controller' => 'departments', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+<script>
+    $(document).ready(function(){
+//        $("#CountryAddForm").submit(function (e){
+//            e.preventDefault();
+//            alert("llego");
+//           //$("#CountryAddForm").ajaxForm({url: '/ticket_express/countries/add', type: 'post'}); 
+//           $.post( "/ticket_express/countries/add", $( "#CountryAddForm" ).serialize() );
+//        });
+        
+    });
+</script>

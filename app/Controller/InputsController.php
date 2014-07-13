@@ -1,5 +1,7 @@
 <?php
+
 App::uses('AppController', 'Controller');
+
 /**
  * Inputs Controller
  *
@@ -8,109 +10,115 @@ App::uses('AppController', 'Controller');
  */
 class InputsController extends AppController {
 
-/**
- * Components
- *
- * @var array
- */
-	public $components = array('Paginator');
+    /**
+     * Components
+     *
+     * @var array
+     */
+    public $components = array('Paginator');
 
-/**
- * index method
- *
- * @return void
- */
-	public function index() {
-		$this->Input->recursive = 0;
-		$this->set('inputs', $this->Paginator->paginate());
-	}
+    /**
+     * index method
+     *
+     * @return void
+     */
+    public function index() {
+        $this->layout = false;
+        $this->Input->recursive = 0;
+        $this->set('inputs', $this->Paginator->paginate());
+    }
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
-		if (!$this->Input->exists($id)) {
-			throw new NotFoundException(__('Invalid input'));
-		}
-		$options = array('conditions' => array('Input.' . $this->Input->primaryKey => $id));
-		$this->set('input', $this->Input->find('first', $options));
-	}
+    /**
+     * view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function view($id = null) {
+        $this->layout = false;
+        if (!$this->Input->exists($id)) {
+            throw new NotFoundException(__('Invalid input'));
+        }
+        $options = array('conditions' => array('Input.' . $this->Input->primaryKey => $id));
+        $this->set('input', $this->Input->find('first', $options));
+    }
 
-/**
- * add method
- *
- * @return void
- */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->Input->create();
-			if ($this->Input->save($this->request->data)) {
-				$this->Session->setFlash(__('The input has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The input could not be saved. Please, try again.'));
-			}
-		}
-		$inputStates = $this->Input->InputState->find('list');
-		$people = $this->Input->Person->find('list');
-		$eventsRegistrationTypes = $this->Input->EventsRegistrationType->find('list');
-		$activities = $this->Input->Activity->find('list');
-		$deliveryMethods = $this->Input->DeliveryMethod->find('list');
-		$this->set(compact('inputStates', 'people', 'eventsRegistrationTypes', 'activities', 'deliveryMethods'));
-	}
+    /**
+     * add method
+     *
+     * @return void
+     */
+    public function add() {
+        $this->layout = false;
+        if ($this->request->is('post')) {
+            $this->Input->create();
+            if ($this->Input->save($this->request->data)) {
+                $this->Session->setFlash(__('The input has been saved.'));
+                return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The input could not be saved. Please, try again.'));
+            }
+        }
+        $inputStates = $this->Input->InputState->find('list');
+        $people = $this->Input->Person->find('list');
+        $eventsRegistrationTypes = $this->Input->EventsRegistrationType->find('list');
+        $activities = $this->Input->Activity->find('list');
+        $deliveryMethods = $this->Input->DeliveryMethod->find('list');
+        $this->set(compact('inputStates', 'people', 'eventsRegistrationTypes', 'activities', 'deliveryMethods'));
+    }
 
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function edit($id = null) {
-		if (!$this->Input->exists($id)) {
-			throw new NotFoundException(__('Invalid input'));
-		}
-		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Input->save($this->request->data)) {
-				$this->Session->setFlash(__('The input has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The input could not be saved. Please, try again.'));
-			}
-		} else {
-			$options = array('conditions' => array('Input.' . $this->Input->primaryKey => $id));
-			$this->request->data = $this->Input->find('first', $options);
-		}
-		$inputStates = $this->Input->InputState->find('list');
-		$people = $this->Input->Person->find('list');
-		$eventsRegistrationTypes = $this->Input->EventsRegistrationType->find('list');
-		$activities = $this->Input->Activity->find('list');
-		$deliveryMethods = $this->Input->DeliveryMethod->find('list');
-		$this->set(compact('inputStates', 'people', 'eventsRegistrationTypes', 'activities', 'deliveryMethods'));
-	}
+    /**
+     * edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function edit($id = null) {
+        $this->layout = false;
+        if (!$this->Input->exists($id)) {
+            throw new NotFoundException(__('Invalid input'));
+        }
+        if ($this->request->is(array('post', 'put'))) {
+            if ($this->Input->save($this->request->data)) {
+                $this->Session->setFlash(__('The input has been saved.'));
+                return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The input could not be saved. Please, try again.'));
+            }
+        } else {
+            $options = array('conditions' => array('Input.' . $this->Input->primaryKey => $id));
+            $this->request->data = $this->Input->find('first', $options);
+        }
+        $inputStates = $this->Input->InputState->find('list');
+        $people = $this->Input->Person->find('list');
+        $eventsRegistrationTypes = $this->Input->EventsRegistrationType->find('list');
+        $activities = $this->Input->Activity->find('list');
+        $deliveryMethods = $this->Input->DeliveryMethod->find('list');
+        $this->set(compact('inputStates', 'people', 'eventsRegistrationTypes', 'activities', 'deliveryMethods'));
+    }
 
-/**
- * delete method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function delete($id = null) {
-		$this->Input->id = $id;
-		if (!$this->Input->exists()) {
-			throw new NotFoundException(__('Invalid input'));
-		}
-		$this->request->allowMethod('post', 'delete');
-		if ($this->Input->delete()) {
-			$this->Session->setFlash(__('The input has been deleted.'));
-		} else {
-			$this->Session->setFlash(__('The input could not be deleted. Please, try again.'));
-		}
-		return $this->redirect(array('action' => 'index'));
-	}
+    /**
+     * delete method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function delete($id = null) {
+        $this->layout = false;
+        $this->Input->id = $id;
+        if (!$this->Input->exists()) {
+            throw new NotFoundException(__('Invalid input'));
+        }
+        $this->request->allowMethod('post', 'delete');
+        if ($this->Input->delete()) {
+            $this->Session->setFlash(__('The input has been deleted.'));
+        } else {
+            $this->Session->setFlash(__('The input could not be deleted. Please, try again.'));
+        }
+        return $this->redirect(array('action' => 'index'));
+    }
+
 }
