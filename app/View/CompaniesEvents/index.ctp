@@ -24,7 +24,6 @@
 			<?php echo $this->Html->link($companiesEvent['RoleCompany']['id'], array('controller' => 'role_companies', 'action' => 'view', $companiesEvent['RoleCompany']['id'])); ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $companiesEvent['CompaniesEvent']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $companiesEvent['CompaniesEvent']['id'])); ?>
 			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $companiesEvent['CompaniesEvent']['id']), array(), __('Are you sure you want to delete # %s?', $companiesEvent['CompaniesEvent']['id'])); ?>
 		</td>
@@ -46,15 +45,4 @@
 	?>
 	</div>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Companies Event'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Companies'), array('controller' => 'companies', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Company'), array('controller' => 'companies', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Events'), array('controller' => 'events', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Event'), array('controller' => 'events', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Role Companies'), array('controller' => 'role_companies', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Role Company'), array('controller' => 'role_companies', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+

@@ -1,26 +1,43 @@
 <div class="cities form">
-<?php echo $this->Form->create('City'); ?>
-	<fieldset>
-		<legend><?php echo __('Add City'); ?></legend>
-	<?php
-		echo $this->Form->input('department_id');
-		echo $this->Form->input('nombre');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+    <?php echo $this->Form->create('City'); ?>
+    <fieldset>
+        <legend><?php echo __('Crear Ciudad'); ?></legend>
+        <?php
+        echo $this->Form->input('country_id', array(
+            "options" => $countriesName,
+            "empty"=>"Seleccione un País"
+        ));
+        echo $this->Form->input('department_id');
+        echo $this->Form->input('nombre');
+        ?>
+    </fieldset>
+    <?php echo $this->Form->end(__('Submit')); ?>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
 
-		<li><?php echo $this->Html->link(__('List Cities'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Departments'), array('controller' => 'departments', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Department'), array('controller' => 'departments', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Companies'), array('controller' => 'companies', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Company'), array('controller' => 'companies', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Stages'), array('controller' => 'stages', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Stage'), array('controller' => 'stages', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+<script>
+    $(document).ready(function() {
+          $("#CityDepartmentId").html("");
+        $("#CityCountryId").change(function() {
+            var url = url_base + "departments/getDepartamentsByCountry.xml";
+            var datos = {
+                country_id: $(this).val()
+            };
+            ajax(url, datos, function(xml) {
+                $("#CityDepartmentId").html("");
+                $("datos", xml).each(function() {
+                    var obj = $(this).find("Department");
+                    var valor, texto;                    
+                    valor = $("id", obj).text();
+                    texto = $("nombre", obj).text();
+                    if (valor) {
+                        var html = "<option value='$1'>$2</option>";
+                        html = html.replace("$1", valor);
+                        html = html.replace("$2", texto);
+                        $("#CityDepartmentId").append(html);
+                    }
+                });
+            });
+        });
+    });
+
+</script>

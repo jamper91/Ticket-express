@@ -44,7 +44,6 @@
 			<td><?php echo $permissionsUser['authorization_id']; ?></td>
 			<td><?php echo $permissionsUser['estado']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'permissions_users', 'action' => 'view', $permissionsUser['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'permissions_users', 'action' => 'edit', $permissionsUser['id'])); ?>
 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'permissions_users', 'action' => 'delete', $permissionsUser['id']), array(), __('Are you sure you want to delete # %s?', $permissionsUser['id'])); ?>
 			</td>

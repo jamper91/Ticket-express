@@ -21,6 +21,7 @@ class DeliveryMethodsInputsController extends AppController {
  * @return void
  */
 	public function index() {
+            $this->layout=false;
 		$this->DeliveryMethodsInput->recursive = 0;
 		$this->set('deliveryMethodsInputs', $this->Paginator->paginate());
 	}
@@ -33,6 +34,7 @@ class DeliveryMethodsInputsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+            $this->layout=false;
 		if (!$this->DeliveryMethodsInput->exists($id)) {
 			throw new NotFoundException(__('Invalid delivery methods input'));
 		}
@@ -46,6 +48,7 @@ class DeliveryMethodsInputsController extends AppController {
  * @return void
  */
 	public function add() {
+            $this->layout=false;
 		if ($this->request->is('post')) {
 			$this->DeliveryMethodsInput->create();
 			if ($this->DeliveryMethodsInput->save($this->request->data)) {
@@ -68,6 +71,7 @@ class DeliveryMethodsInputsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+            $this->layout=false;
 		if (!$this->DeliveryMethodsInput->exists($id)) {
 			throw new NotFoundException(__('Invalid delivery methods input'));
 		}
@@ -95,6 +99,7 @@ class DeliveryMethodsInputsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+            $this->layout=false;
 		$this->DeliveryMethodsInput->id = $id;
 		if (!$this->DeliveryMethodsInput->exists()) {
 			throw new NotFoundException(__('Invalid delivery methods input'));
