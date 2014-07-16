@@ -13,17 +13,7 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Document Type'), array('action' => 'edit', $documentType['DocumentType']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Document Type'), array('action' => 'delete', $documentType['DocumentType']['id']), array(), __('Are you sure you want to delete # %s?', $documentType['DocumentType']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Document Types'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Document Type'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+
 <div class="related">
 	<h3><?php echo __('Related People'); ?></h3>
 	<?php if (!empty($documentType['Person'])): ?>
@@ -64,7 +54,6 @@
 			<td><?php echo $person['pers_tipoSangre']; ?></td>
 			<td><?php echo $person['pers_mail']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'people', 'action' => 'view', $person['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'people', 'action' => 'edit', $person['id'])); ?>
 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'people', 'action' => 'delete', $person['id']), array(), __('Are you sure you want to delete # %s?', $person['id'])); ?>
 			</td>

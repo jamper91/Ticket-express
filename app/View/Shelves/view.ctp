@@ -23,19 +23,7 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Shelf'), array('action' => 'edit', $shelf['Shelf']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Shelf'), array('action' => 'delete', $shelf['Shelf']['id']), array(), __('Are you sure you want to delete # %s?', $shelf['Shelf']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Shelves'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Shelf'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Locations'), array('controller' => 'locations', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Location'), array('controller' => 'locations', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Activities'), array('controller' => 'activities', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Activity'), array('controller' => 'activities', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+
 <div class="related">
 	<h3><?php echo __('Related Activities'); ?></h3>
 	<?php if (!empty($shelf['Activity'])): ?>
@@ -72,7 +60,6 @@
 			<td><?php echo $activity['func_cantAlerta']; ?></td>
 			<td><?php echo $activity['func_codigo']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'activities', 'action' => 'view', $activity['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'activities', 'action' => 'edit', $activity['id'])); ?>
 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'activities', 'action' => 'delete', $activity['id']), array(), __('Are you sure you want to delete # %s?', $activity['id'])); ?>
 			</td>

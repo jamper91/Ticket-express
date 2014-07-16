@@ -18,7 +18,7 @@
     $(document).ready(function() {
           $("#CityDepartmentId").html("");
         $("#CityCountryId").change(function() {
-            var url = url_base + "departments/getDepartamentsByCountry.xml";
+            var url = urlbase + "departments/getDepartamentsByCountry.xml";
             var datos = {
                 country_id: $(this).val()
             };

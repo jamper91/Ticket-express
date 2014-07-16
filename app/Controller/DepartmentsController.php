@@ -65,7 +65,7 @@ class DepartmentsController extends AppController {
                 "Country.nombre"
             )
         ));
-        debug($countriesName);
+        //debug($countriesName);
         $countries = $this->Department->Country->find('list');
 
         $this->set(compact('countries'));
