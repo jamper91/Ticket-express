@@ -18,21 +18,6 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Events Registration Type'), array('action' => 'edit', $eventsRegistrationType['EventsRegistrationType']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Events Registration Type'), array('action' => 'delete', $eventsRegistrationType['EventsRegistrationType']['id']), array(), __('Are you sure you want to delete # %s?', $eventsRegistrationType['EventsRegistrationType']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Events Registration Types'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Events Registration Type'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Registration Types'), array('controller' => 'registration_types', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Registration Type'), array('controller' => 'registration_types', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Events'), array('controller' => 'events', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Event'), array('controller' => 'events', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Inputs'), array('controller' => 'inputs', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Input'), array('controller' => 'inputs', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
 <div class="related">
 	<h3><?php echo __('Related Inputs'); ?></h3>
 	<?php if (!empty($eventsRegistrationType['Input'])): ?>
@@ -81,8 +66,7 @@
 			<td><?php echo $input['entr_impreso']; ?></td>
 			<td><?php echo $input['events_registration_type_id']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'inputs', 'action' => 'view', $input['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'inputs', 'action' => 'edit', $input['id'])); ?>
+								<?php echo $this->Html->link(__('Edit'), array('controller' => 'inputs', 'action' => 'edit', $input['id'])); ?>
 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'inputs', 'action' => 'delete', $input['id']), array(), __('Are you sure you want to delete # %s?', $input['id'])); ?>
 			</td>
 		</tr>

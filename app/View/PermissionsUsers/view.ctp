@@ -23,16 +23,3 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Permissions User'), array('action' => 'edit', $permissionsUser['PermissionsUser']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Permissions User'), array('action' => 'delete', $permissionsUser['PermissionsUser']['id']), array(), __('Are you sure you want to delete # %s?', $permissionsUser['PermissionsUser']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Permissions Users'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Permissions User'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Authorizations'), array('controller' => 'authorizations', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Authorization'), array('controller' => 'authorizations', 'action' => 'add')); ?> </li>
-	</ul>
-</div>

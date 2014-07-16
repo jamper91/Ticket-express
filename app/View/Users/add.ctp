@@ -105,7 +105,7 @@
 <script>
     $("#UserDepartmentId").change(function() {
 
-        var url2 = url_base + "cities/getCitiesByDepartment.xml";        
+        var url2 = urlbase + "cities/getCitiesByDepartment.xml";        
         var datos2 = {
             department_id: $(this).val()
         };
@@ -131,7 +131,7 @@
         $("#UserDepartmentId").html("");
         $("#UserCityId").html("");
         $("#UserCountryId").change(function() {
-            var url = url_base + "departments/getDepartamentsByCountry.xml";
+            var url = urlbase + "departments/getDepartamentsByCountry.xml";
             var datos = {
                 country_id: $(this).val()
             };

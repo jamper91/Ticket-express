@@ -98,25 +98,6 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Input'), array('action' => 'edit', $input['Input']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Input'), array('action' => 'delete', $input['Input']['id']), array(), __('Are you sure you want to delete # %s?', $input['Input']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Inputs'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Input'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Input States'), array('controller' => 'input_states', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Input State'), array('controller' => 'input_states', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Events Registration Types'), array('controller' => 'events_registration_types', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Events Registration Type'), array('controller' => 'events_registration_types', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Activities'), array('controller' => 'activities', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Activity'), array('controller' => 'activities', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Delivery Methods'), array('controller' => 'delivery_methods', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Delivery Method'), array('controller' => 'delivery_methods', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
 <div class="related">
 	<h3><?php echo __('Related Activities'); ?></h3>
 	<?php if (!empty($input['Activity'])): ?>
@@ -182,7 +163,6 @@
 			<td><?php echo $deliveryMethod['id']; ?></td>
 			<td><?php echo $deliveryMethod['descripcion']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'delivery_methods', 'action' => 'view', $deliveryMethod['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'delivery_methods', 'action' => 'edit', $deliveryMethod['id'])); ?>
 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'delivery_methods', 'action' => 'delete', $deliveryMethod['id']), array(), __('Are you sure you want to delete # %s?', $deliveryMethod['id'])); ?>
 			</td>

@@ -48,6 +48,3 @@
 	?>
 	</div>
 </div>
-<div class="actions">
-	
-</div>

@@ -178,11 +178,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                             </li>
                             <li class="has-sub"><a><span>Usuarios</span></a>
                                 <ul>
-                                    <li><a id="lnkDepa" href="<?php echo $this->Html->url(array("controller" => "typeusers", "action" => "index")); ?>">
+                                    <li><a id="lnkDepa" href="<?php echo $this->Html->url(array("controller" => "type_users", "action" => "index")); ?>">
                                             Listar Tipos de Usuario
                                         </a> 
                                     </li>
-                                    <li><a id="lnkDepa" href="<?php echo $this->Html->url(array("controller" => "typeusers", "action" => "add")); ?>">
+                                    <li><a id="lnkDepa" href="<?php echo $this->Html->url(array("controller" => "type_users", "action" => "add")); ?>">
                                             Crear Tipo de Usuario
                                         </a> 
                                     </li>
@@ -206,11 +206,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                             Crear Permiso
                                         </a> 
                                     </li>
-                                    <li><a id="lnkDepa" href="<?php echo $this->Html->url(array("controller" => "authorizationsusers", "action" => "index")); ?>">
+                                    <li><a id="lnkDepa" href="<?php echo $this->Html->url(array("controller" => "authorizations_users", "action" => "index")); ?>">
                                             Listar Permisos por Usuario
                                         </a> 
                                     </li>
-                                    <li><a id="lnkDepa" href="<?php echo $this->Html->url(array("controller" => "authorizationsusers", "action" => "add")); ?>">
+                                    <li><a id="lnkDepa" href="<?php echo $this->Html->url(array("controller" => "authorizations_users", "action" => "add")); ?>">
                                             Agregar Permiso a Usuario
                                         </a> 
                                     </li>

@@ -305,7 +305,6 @@
 			<td><?php echo $registrationType['id']; ?></td>
 			<td><?php echo $registrationType['nombre']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'registration_types', 'action' => 'view', $registrationType['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'registration_types', 'action' => 'edit', $registrationType['id'])); ?>
 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'registration_types', 'action' => 'delete', $registrationType['id']), array(), __('Are you sure you want to delete # %s?', $registrationType['id'])); ?>
 			</td>

@@ -18,16 +18,3 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Events Payment'), array('action' => 'edit', $eventsPayment['EventsPayment']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Events Payment'), array('action' => 'delete', $eventsPayment['EventsPayment']['id']), array(), __('Are you sure you want to delete # %s?', $eventsPayment['EventsPayment']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Events Payments'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Events Payment'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Payments'), array('controller' => 'payments', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Payment'), array('controller' => 'payments', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Events'), array('controller' => 'events', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Event'), array('controller' => 'events', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
