@@ -3,7 +3,7 @@
  * Prohibida  su utilización sin previo consentimiento
  * Todos los Derechos Reservados.
  */
-var url_base="http://localhost/ticket_express/";
+var url_base="http://localhost/ticket-express/";
 function ajax(url2, datos, callback)
 {
     
