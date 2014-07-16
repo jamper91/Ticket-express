@@ -33,21 +33,7 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Location'), array('action' => 'edit', $location['Location']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Location'), array('action' => 'delete', $location['Location']['id']), array(), __('Are you sure you want to delete # %s?', $location['Location']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Locations'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Location'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Stages'), array('controller' => 'stages', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Stage'), array('controller' => 'stages', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Locations'), array('controller' => 'locations', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Parent Location'), array('controller' => 'locations', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Shelves'), array('controller' => 'shelves', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Shelf'), array('controller' => 'shelves', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+
 <div class="related">
 	<h3><?php echo __('Related Locations'); ?></h3>
 	<?php if (!empty($location['ChildLocation'])): ?>
@@ -70,7 +56,6 @@
 			<td><?php echo $childLocation['loca_fila']; ?></td>
 			<td><?php echo $childLocation['loca_colomnna']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'locations', 'action' => 'view', $childLocation['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'locations', 'action' => 'edit', $childLocation['id'])); ?>
 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'locations', 'action' => 'delete', $childLocation['id']), array(), __('Are you sure you want to delete # %s?', $childLocation['id'])); ?>
 			</td>
@@ -103,8 +88,7 @@
 			<td><?php echo $shelf['esta_nombre']; ?></td>
 			<td><?php echo $shelf['esta_estado']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'shelves', 'action' => 'view', $shelf['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'shelves', 'action' => 'edit', $shelf['id'])); ?>
+								<?php echo $this->Html->link(__('Edit'), array('controller' => 'shelves', 'action' => 'edit', $shelf['id'])); ?>
 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'shelves', 'action' => 'delete', $shelf['id']), array(), __('Are you sure you want to delete # %s?', $shelf['id'])); ?>
 			</td>
 		</tr>

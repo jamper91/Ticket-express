@@ -13,17 +13,6 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Input State'), array('action' => 'edit', $inputState['InputState']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Input State'), array('action' => 'delete', $inputState['InputState']['id']), array(), __('Are you sure you want to delete # %s?', $inputState['InputState']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Input States'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Input State'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Inputs'), array('controller' => 'inputs', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Input'), array('controller' => 'inputs', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
 <div class="related">
 	<h3><?php echo __('Related Inputs'); ?></h3>
 	<?php if (!empty($inputState['Input'])): ?>
@@ -72,7 +61,6 @@
 			<td><?php echo $input['entr_impreso']; ?></td>
 			<td><?php echo $input['events_registration_type_id']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'inputs', 'action' => 'view', $input['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'inputs', 'action' => 'edit', $input['id'])); ?>
 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'inputs', 'action' => 'delete', $input['id']), array(), __('Are you sure you want to delete # %s?', $input['id'])); ?>
 			</td>

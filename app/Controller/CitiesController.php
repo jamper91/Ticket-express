@@ -66,7 +66,7 @@ class CitiesController extends AppController {
                 "Country.nombre"
             )
         ));
-        debug($countriesName);
+        //debug($countriesName);
         $countries = $this->Country->find('list');
 
         $this->set(compact('countries'));
@@ -129,7 +129,7 @@ class CitiesController extends AppController {
 
         $this->layout = "webservices";
         $department_id = $this->request->data["department_id"]; //Department
-        debug($department_id);
+        //debug($department_id);
         $options = array(
             "conditions" => array(
                 "City.department_id" => $department_id
@@ -142,7 +142,7 @@ class CitiesController extends AppController {
         );
         $cities = $this->City->find("all", $options);
         $log = $this->City->getDataSource()->getLog(false, false);
-        debug($log);
+        //debug($log);
         $this->set(
                 array(
                     "datos" => $cities,

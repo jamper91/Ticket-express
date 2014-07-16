@@ -64,7 +64,7 @@ class UsersController extends AppController {
                 'People' => array(
                     'pers_primNombre' => $data['People']['pers_primNombre'],
                     'pers_primApellido' => $data['People']['pers_primApellido'],
-                    'document_type_id' => $data['People']['document_type_id'],
+                    'document_type_id' => $data['User']['document_type_id'],
                     'city_id' => $data['User']['city_id'],
                     'pers_documento' => $data['People']['pers_documento'],
                     'pers_direccion' => $data['People']['pers_direccion'],
