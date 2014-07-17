@@ -1,6 +1,6 @@
 <?php
 
-echo $session->flash('auth');
+//echo $session->flash('auth');
 echo $form->create('User', array('action' => 'login'));
 echo $form->input('usuario');
 echo $form->input('password');

@@ -1,5 +1,5 @@
 <div class="users form">    
-    <?php echo $this->Form->create('User',array('action' => 'registrar')); ?>
+    <?php echo $this->Form->create('User', array('action' => 'registrar')); ?>
     <fieldset>
         <legend><?php echo __('Crear Usuario'); ?></legend>
         <table>
@@ -101,30 +101,7 @@
 
 
 <script>
-    $("#UserDepartmentId").change(function() {
 
-        var url2 = url_base + "cities/getCitiesByDepartment.xml";        
-        var datos2 = {
-            department_id: $(this).val()
-        };
-        //alert(datos2.department_id);
-        ajax(url2, datos2, function(xml) {
-            $("#UserCityId").html("");
-            $("datos", xml).each(function() {
-                var obj = $(this).find("City");
-                var valor, texto;
-                valor = $("id", obj).text();
-                texto = $("nombre", obj).text();
-                alert("valor   " + valor + "  text   " + texto);
-                if (valor) {
-                    var html = "<option value='$1'>$2</option>";
-                    html = html.replace("$1", valor);
-                    html = html.replace("$2", texto);
-                    $("#UserCityId").append(html);
-                }
-            });
-        });
-    });
     $(document).ready(function() {
         $("#UserDepartmentId").html("");
         $("#UserCityId").html("");
@@ -134,7 +111,7 @@
                 country_id: $(this).val()
             };
             ajax(url, datos, function(xml) {
-                $("#UserDepartmentId").html("");
+                $("#UserDepartmentId").html("<option> Seleccion </option>");
                 $("datos", xml).each(function() {
                     var obj = $(this).find("Department");
                     var valor, texto;
@@ -145,6 +122,30 @@
                         html = html.replace("$1", valor);
                         html = html.replace("$2", texto);
                         $("#UserDepartmentId").append(html);
+                    }
+                });
+            });
+        });
+        $("#UserDepartmentId").change(function() {
+
+            var url2 = url_base + "cities/getCitiesByDepartment.xml";
+            var datos2 = {
+                department_id: $(this).val()
+            };
+            //alert(datos2.department_id);
+            ajax(url2, datos2, function(xml) {
+                $("#UserCityId").html("<option> Seleccion </option>");
+                $("datos", xml).each(function() {
+                    var obj = $(this).find("City");
+                    var valor, texto;
+                    valor = $("id", obj).text();
+                    texto = $("nombre", obj).text();
+                    alert("valor   " + valor + "  text   " + texto);
+                    if (valor) {
+                        var html = "<option value='$1'>$2</option>";
+                        html = html.replace("$1", valor);
+                        html = html.replace("$2", texto);
+                        $("#UserCityId").append(html);
                     }
                 });
             });

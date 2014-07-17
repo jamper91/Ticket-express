@@ -23,11 +23,5 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
     
-    var $components = array('Auth','Session');
-    function beforeFilter() {
-        $this->Auth->fields = array(
-            'username' => 'usuario',
-            'password' => 'password'
-            );
-    }
+    
 }
